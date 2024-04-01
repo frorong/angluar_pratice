@@ -14,7 +14,7 @@ export default function Home() {
         Authorization: at,
       },
     });
-    console.table(index + " 번째 -> ", res.data);
+    console.error(index + " 번째 -> ", res.data);
   };
 
   const handleClick = () => {
