@@ -23,6 +23,22 @@ export default function Home() {
         setTimeout(() => test(i), i * 40);
   };
 
+  const handleOnClick = async () => {
+    const res = await axios.post(
+      "/api/game/roulette",
+      // {
+      //   point: 100,
+      //   prediction: "TAIL",
+      // },
+      {
+        headers: {
+          Authorization: at,
+        },
+      }
+    );
+    console.log(res.data);
+  };
+
   return (
     <main>
       <input
@@ -38,6 +54,7 @@ export default function Home() {
         onChange={(e) => setAT(e.target.value)}
       />
       <button onClick={handleClick}>실행</button>
+      <button onClick={handleOnClick}>해봐</button>
     </main>
   );
 }
